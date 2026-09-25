@@ -5,9 +5,11 @@ Throwaway GitHub Pages site for the Family Chat staging migration rehearsal
 seeded staging family migrates to, so its Matrix well-known files must point
 at the new instance's generated serving hostname for that run.
 
-The staging test rewrites both files through the GitHub contents API at the
-start of the rehearsal and resets them to `{}` afterwards. Nothing here is
-production: never point a real family at this domain.
+The files permanently delegate to `stg-famtest.familychat.dev`. The
+rehearsal pins the new staging instance to that host
+(`start_homeserver_migration --serving-hostname`), so the files never change
+per run and CI needs no access to this repo. Nothing here is production:
+never point a real family at this domain.
 
 `.nojekyll` is required, otherwise Jekyll skips the `.well-known` directory.
 DNS lives in neamh/octodns (`config/lazzurs.ie.yaml`, `famtest` CNAME).
