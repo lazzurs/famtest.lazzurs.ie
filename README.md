@@ -2,8 +2,8 @@
 
 Throwaway GitHub Pages site for the Family Chat staging migration rehearsal
 (unicornops/family-chat#237). `famtest.lazzurs.ie` is the custom domain a
-seeded staging family migrates to, so its Matrix well-known files must point
-at the new instance's generated serving hostname for that run.
+seeded staging family migrates to, so its Matrix well-known files delegate
+to that family's new staging instance.
 
 The files permanently delegate to `stg-famtest.familychat.dev`. The
 rehearsal pins the new staging instance to that host
